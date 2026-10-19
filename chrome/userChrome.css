@@ -1,0 +1,7 @@
+/* sc-firefox: Firefox UI customizations.
+ * Keep all @import rules before any other CSS rules.
+ * CSS does not support wildcard imports: add one import per hack.
+ * Comment out an import to disable that customization.
+ */
+
+@import url("macos_fullscreen_overlay.css");

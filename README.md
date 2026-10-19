@@ -20,12 +20,14 @@ Firefox also adds inline styles, making the original `[style=""]` selector unrel
 
 1. Open `about:support` in Firefox and locate your **Profile Folder**.
 2. Create a `chrome` folder inside that profile if it does not exist.
-3. Copy `macos_fullscreen_overlay.css` into that folder.
-4. Add the following import **at the beginning** of your `chrome/userChrome.css`, before other CSS rules:
+3. Copy the contents of this repository's [chrome folder](chrome) into that folder. The included [userChrome.css](chrome/userChrome.css) imports the hack stylesheet.
+4. If you already have a `userChrome.css`, keep it instead of overwriting it. Copy the hack stylesheet alongside it and add the following import **at the beginning** of your existing file, before other CSS rules:
 
    ```css
    @import url("macos_fullscreen_overlay.css");
    ```
+
+   CSS does not support wildcard imports. Add one `@import` per new hack in `userChrome.css`, or comment out an import to disable it.
 
 5. In `about:config`, set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`.
 6. Fully quit Firefox with **Cmd+Q**, then reopen it.
